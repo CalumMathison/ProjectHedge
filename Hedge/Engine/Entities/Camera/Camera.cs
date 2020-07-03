@@ -13,6 +13,7 @@ namespace Engine.Entities.Camera
         private Rectangle _bounds;
         private Rectangle _visableArea;
         private Matrix _transform;
+        private int _width, _height;
         #endregion
 
         #region Properties
@@ -20,6 +21,18 @@ namespace Engine.Entities.Camera
         public Matrix Transform
         {
             get { return _transform; }
+        }
+
+        public int Width
+        {
+            get { return _width; }
+            set { _width = value; }
+        }
+
+        public int Height
+        {
+            get { return _height; }
+            set { _height = value; }
         }
         #endregion
 
@@ -29,7 +42,8 @@ namespace Engine.Entities.Camera
             _bounds = viewport.Bounds;
             _zoom = 1f;
             Position = Vector2.Zero;
-
+            _width = viewport.Width;
+            _height = viewport.Height;
         }
         #endregion
 
@@ -40,7 +54,6 @@ namespace Engine.Entities.Camera
         /// </summary>
         public override void Initialise()
         {
-            AddComponent(new CameraControllerComponent(this));
             base.Initialise();
         }
 
@@ -51,8 +64,6 @@ namespace Engine.Entities.Camera
         /// <param name="gt"></param>
         public override void Update(GameTime gt)
         {
-            // Get zoom from controller.
-            _zoom = FindComponent<CameraControllerComponent>().Zoom;
             // Call matrix update.
             UpdateMatrix();
 

@@ -10,6 +10,7 @@ namespace Engine.Input
         private KeyboardState _currKb, _prevKb;
         private MouseState _currMs, _prevMs;
         private GamePadState _currGp, _prevGp;
+        private float _currMouseScroll, _prevMouseScroll;
 
         public static InputManager Instance
         {
@@ -32,16 +33,21 @@ namespace Engine.Input
             {
                 _currGp = GamePad.GetState(PlayerIndex.One);
             }
+
+            _currMouseScroll = 0;
+            _prevMouseScroll = 0;
             
         }
 
         public void Update()
         {
+            _prevMouseScroll = _currMouseScroll;
             _prevKb = _currKb;
             _prevMs = _currMs;
 
             _currKb = Keyboard.GetState();
             _currMs = Mouse.GetState();
+            _currMouseScroll = _currMs.ScrollWheelValue;
 
             if (GamePad.GetState(PlayerIndex.One).IsConnected)
             {
@@ -85,6 +91,16 @@ namespace Engine.Input
         //{
 
         //}
+
+        public bool GetMouseScrollUp()
+        {
+            return _currMouseScroll > _prevMouseScroll;
+        }
+
+        public bool GetMouseScrollDown()
+        {
+            return _currMouseScroll < _prevMouseScroll;
+        }
 
         public bool IsKeyDown(Keys k)
         {

@@ -2,6 +2,7 @@
 /// Dev: Calum Mathison 
 /// Created on: 25/06/2020
 /// Change Log:
+/// 04/07/20 - Added AddEntity and RemoveEntity methods
 /// 
 
 #region Externs
@@ -92,5 +93,26 @@ namespace Engine.ECM
 
             return null;
         }
+
+        /// <summary>
+        /// Add Entity Method
+        /// Adds a given entity to the list.
+        /// </summary>
+        /// <param name="e"></param>
+        public void AddEntity(Entity e)
+        {
+            List.Add(e);
+        }
+
+        /// <summary>
+        /// Remove Entity Method
+        /// Removes a given entity to the list.
+        /// </summary>
+        /// <param name="e"></param>
+        public void RemoveEntity(Entity e)
+        {
+            List.Remove(e);
+        }
         #endregion
     }
+}

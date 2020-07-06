@@ -52,6 +52,16 @@ namespace Hedge.Scenes
         }
 
         /// <summary>
+        /// Unload Method
+        /// Wipes everything loaded into the content pipeline.
+        /// </summary>
+        /// <param name="Content"></param>
+        public virtual void Unload(ContentManager Content)
+        {
+            Content.Unload();
+        }
+
+        /// <summary>
         /// Update Method
         /// Calls update method from entity manager.
         /// </summary>

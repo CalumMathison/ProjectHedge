@@ -18,7 +18,7 @@ namespace Hedge
 
         protected override void Initialize()
         {
-
+            SceneManager.Instance.Initialise();
             base.Initialize();
         }
 
@@ -26,7 +26,7 @@ namespace Hedge
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            SceneManager.Instance.Load(Content);
         }
 
         protected override void UnloadContent()
@@ -44,6 +44,8 @@ namespace Hedge
                 Exit();
             }
 
+            SceneManager.Instance.Update(gameTime);
+
             base.Update(gameTime);
         }
 
@@ -51,7 +53,7 @@ namespace Hedge
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            SceneManager.Instance.Draw(spriteBatch);
 
             base.Draw(gameTime);
         }

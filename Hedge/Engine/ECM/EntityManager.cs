@@ -30,9 +30,12 @@ namespace Engine.ECM
         /// </summary>
         public void Initialise()
         {
-            foreach (Entity entity in List)
+            if (List.Count > 0)
             {
-                entity.Initialise();
+                foreach (Entity entity in List)
+                {
+                    entity.Initialise();
+                }
             }
         }
 
@@ -43,9 +46,12 @@ namespace Engine.ECM
         /// <param name="content"></param>
         public void Load(ContentManager content)
         {
-            foreach (Entity entity in List)
+            if (List.Count > 0)
             {
-                entity.Load(content);
+                foreach (Entity entity in List)
+                {
+                    entity.Load(content);
+                }
             }
         }
 
@@ -56,9 +62,12 @@ namespace Engine.ECM
         /// <param name="gt"></param>
         public void Update(GameTime gt)
         {
-            foreach (Entity entity in List)
+            if (List.Count > 0)
             {
-                entity.Update(gt);
+                foreach (Entity entity in List)
+                {
+                    entity.Update(gt);
+                }
             }
         }
 
@@ -69,9 +78,12 @@ namespace Engine.ECM
         /// <param name="sb"></param>
         public void Draw(SpriteBatch sb)
         {
-            foreach (Entity entity in List)
+            if (List.Count > 0)
             {
-                entity.Draw(sb);
+                foreach (Entity entity in List)
+                {
+                    entity.Draw(sb);
+                }
             }
         }
 

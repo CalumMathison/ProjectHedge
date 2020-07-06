@@ -2,8 +2,9 @@
 /// Dev: Calum Mathison
 /// Created on: 04/07/20
 /// Change Log:
-/// 
+/// 07/07/2020 - Added Instansiation for entity manager list
 
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -28,6 +29,7 @@ namespace Hedge.Scenes
         public Scene()
         {
             _em = new EntityManager();
+            _em.List = new List<Entity>();
         }
         #endregion
 

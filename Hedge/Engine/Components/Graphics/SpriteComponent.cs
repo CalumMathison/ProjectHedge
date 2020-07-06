@@ -50,7 +50,7 @@ namespace Engine.Components.Graphics
         /// </summary>
         public override void Initialise()
         {
-            _alpha = 0;
+            _alpha = 1;
             _rotation = 0;
             _scale = 1;
             _color = Color.White;

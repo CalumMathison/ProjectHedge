@@ -78,24 +78,24 @@ namespace Engine.Entities.Camera
             if (InputManager.Instance.IsKeyDown(Keys.W) || 
                 InputManager.Instance.IsButtonDown(Buttons.DPadUp))
             {
-                _position.Y = -_speed;
+                _position.Y += -_speed;
             }
             else if (InputManager.Instance.IsKeyDown(Keys.S) ||
                 InputManager.Instance.IsButtonDown(Buttons.DPadDown))
             {
-                _position.Y = _speed;
+                _position.Y += _speed;
             }
 
             // Right & Left
             if (InputManager.Instance.IsKeyDown(Keys.D) ||
                 InputManager.Instance.IsButtonDown(Buttons.DPadRight))
             {
-                _position.X = _speed;
+                _position.X += _speed;
             }
             else if (InputManager.Instance.IsKeyDown(Keys.A) ||
                 InputManager.Instance.IsButtonDown(Buttons.DPadLeft))
             {
-                _position.X = -_speed;
+                _position.X += -_speed;
             }
         }
 

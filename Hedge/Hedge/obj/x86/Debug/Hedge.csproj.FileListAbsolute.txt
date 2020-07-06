@@ -22,3 +22,4 @@ D:\Projects\Woad Stoat Studio\Project Hedge\Repo\ProjectHedge\Hedge\Hedge\obj\x8
 D:\Projects\Woad Stoat Studio\Project Hedge\Repo\ProjectHedge\Hedge\Hedge\obj\x86\Debug\Hedge.csproj.CopyComplete
 D:\Projects\Woad Stoat Studio\Project Hedge\Repo\ProjectHedge\Hedge\Hedge\obj\x86\Debug\Hedge.exe
 D:\Projects\Woad Stoat Studio\Project Hedge\Repo\ProjectHedge\Hedge\Hedge\obj\x86\Debug\Hedge.pdb
+D:\Projects\Woad Stoat Studio\Project Hedge\Repo\ProjectHedge\Hedge\Hedge\bin\Windows\x86\Debug\Content\Graphics\Testing\TestSquare.xnb

@@ -18,11 +18,15 @@ namespace Hedge.Scenes
     public class Scene
     {
         #region Fields
-        protected EntityManager _em;
+        private EntityManager _em;
         #endregion
 
         #region Properties
-
+        protected EntityManager EM
+        {
+            get { return _em; }
+            set { _em = value; }
+        }
         #endregion
 
         #region Constructor

@@ -50,6 +50,7 @@ namespace Hedge
             {
                 scene.Value.Initialise();
             }
+            Console.WriteLine("Scenes Initialised!");
 
             _activeScene = _scenes["TestScene"];
         }
@@ -58,6 +59,7 @@ namespace Hedge
         {
             _contentManager = Content;
             _activeScene.Load(Content);
+            Console.WriteLine("Active Scene Loaded!");
         }
 
         public void Update(GameTime gt)

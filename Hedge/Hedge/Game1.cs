@@ -10,6 +10,11 @@ namespace Hedge
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        public static Viewport VP
+        {
+            get; set;
+        }
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -18,6 +23,7 @@ namespace Hedge
 
         protected override void Initialize()
         {
+            VP = GraphicsDevice.Viewport;
             SceneManager.Instance.Initialise();
             base.Initialize();
         }
@@ -26,7 +32,7 @@ namespace Hedge
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            SceneManager.Instance.Load(Content);
+            SceneManager.Instance.Load(Content);         
         }
 
         protected override void UnloadContent()

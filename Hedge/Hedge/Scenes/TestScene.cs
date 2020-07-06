@@ -7,6 +7,9 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Engine.Components.Graphics;
+using Engine.Entities.Camera;
+using Engine.ECM;
 
 namespace Hedge.Scenes
 {
@@ -21,13 +24,23 @@ namespace Hedge.Scenes
         #region Constructor
         public TestScene() : base()
         {
-
+            
         }
         #endregion
 
         #region Methods
         public override void Initialise()
         {
+            FreeCamera c = new FreeCamera(Game1.VP);
+            EM.AddEntity(c);
+
+            Entity e = new Entity();
+            SpriteComponent sc = new SpriteComponent(e);
+            sc.Loc = "Graphics/Testing/TestSquare";
+            e.AddComponent(sc);
+            e.Position = new Vector2(0,0);
+            EM.AddEntity(e);
+
             base.Initialise();
         }
 
@@ -43,7 +56,7 @@ namespace Hedge.Scenes
 
         public override void Draw(SpriteBatch sb)
         {
-            sb.Begin();
+            sb.Begin(SpriteSortMode.Deferred, null, null, null, null, null, EM.FindEntity<FreeCamera>().Transform);
             base.Draw(sb);
             sb.End();
         }

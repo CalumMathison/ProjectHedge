@@ -87,10 +87,10 @@ namespace Engine.Input
             return false;
         }
 
-        //public Vector2 GetMouseScreenPosition()
-        //{
-
-        //}
+        public bool IsMouseColliding(Rectangle target)
+        {
+            return target.Contains(_currMs.Position);
+        }
 
         public bool GetMouseScrollUp()
         {

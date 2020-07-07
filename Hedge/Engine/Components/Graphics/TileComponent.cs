@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Engine.ECM;
 using Engine.Components.Graphics;
 using Engine.Components.Physics;
+using Engine.Input;
 
 namespace Engine.Components.Graphics
 {

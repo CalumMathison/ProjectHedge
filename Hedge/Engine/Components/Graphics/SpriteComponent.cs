@@ -30,6 +30,12 @@ namespace Engine.Components.Graphics
         {
             set { _loc = value; }
         }
+
+        public Color Col
+        {
+            get { return _color; }
+            set { _color = value; }
+        }
         #endregion
 
         #region Constructor

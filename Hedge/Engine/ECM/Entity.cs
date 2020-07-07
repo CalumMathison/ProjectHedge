@@ -145,6 +145,27 @@ namespace Engine.ECM
         }
 
         /// <summary>
+        /// Find Components
+        /// Finds and returns all components of a certain type as a list.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public List<T> FindComponents<T>() where T : Component
+        {
+            List<T> list = new List<T>();
+
+            foreach (Component component in _components)
+            {
+                if (component is T)
+                {
+                    list.Add((T)component);
+                }
+            }
+
+            return list;
+        }
+
+        /// <summary>
         /// Remove Component Method.
         /// Removes a component of a given type from the list.
         /// </summary>

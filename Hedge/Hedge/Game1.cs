@@ -21,7 +21,7 @@ namespace Hedge
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             //graphics.IsFullScreen = true;
-
+            IsMouseVisible = true;
             Globals.DebugMode = true;
         }
 

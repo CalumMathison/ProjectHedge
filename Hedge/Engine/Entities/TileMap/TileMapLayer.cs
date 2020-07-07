@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Engine.ECM;
 using Engine.Components.Graphics;
 using Engine.Components.Physics;
-
+using Engine.Input;
 
 namespace Engine.Entities.TileMap
 {
@@ -51,6 +51,14 @@ namespace Engine.Entities.TileMap
 
         public override void Update(GameTime gt)
         {
+            foreach (ColliderComponent c in FindComponents<ColliderComponent>())
+            {
+                if (InputManager.Instance.IsMouseColliding(c.Rect) && 
+                    InputManager.Instance.IsMousePressed(InputManager.MouseButtons.Left))
+                {
+                    Console.WriteLine("Clicked"); 
+                }
+            }
             base.Update(gt);
         }
 

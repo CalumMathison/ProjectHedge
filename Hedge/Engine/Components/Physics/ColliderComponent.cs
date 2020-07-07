@@ -22,6 +22,10 @@ namespace Engine.Components.Physics
         #endregion
 
         #region Properties
+        public Rectangle Rect
+        {
+            get { return _rect; }
+        }
         #endregion
 
         #region Constructor

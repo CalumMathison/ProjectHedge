@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Engine.Input;
+using Engine;
 
 namespace Hedge
 {
@@ -20,6 +21,8 @@ namespace Hedge
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             //graphics.IsFullScreen = true;
+
+            Globals.DebugMode = true;
         }
 
         protected override void Initialize()

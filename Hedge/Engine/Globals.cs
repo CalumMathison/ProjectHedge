@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Engine.Entities.TileMap
+namespace Engine
 {
-    class Tile
+    public static class Globals
     {
+        public static bool DebugMode { get; set; }
     }
 }

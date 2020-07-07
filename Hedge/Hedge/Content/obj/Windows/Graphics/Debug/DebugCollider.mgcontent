@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/Projects/Woad Stoat Studio/Project Hedge/Repo/ProjectHedge/Hedge/Hedge/Content/Graphics/Testing/TestSquare.png</SourceFile>
-  <SourceTime>2020-07-07T00:22:05.4984089+01:00</SourceTime>
-  <DestFile>D:/Projects/Woad Stoat Studio/Project Hedge/Repo/ProjectHedge/Hedge/Hedge/Content/bin/Windows/Graphics/Testing/TestSquare.xnb</DestFile>
-  <DestTime>2020-07-07T19:28:07.4717407+01:00</DestTime>
+  <SourceFile>D:/Projects/Woad Stoat Studio/Project Hedge/Repo/ProjectHedge/Hedge/Hedge/Content/Graphics/Debug/DebugCollider.png</SourceFile>
+  <SourceTime>2020-07-07T19:27:28.8420418+01:00</SourceTime>
+  <DestFile>D:/Projects/Woad Stoat Studio/Project Hedge/Repo/ProjectHedge/Hedge/Hedge/Content/bin/Windows/Graphics/Debug/DebugCollider.xnb</DestFile>
+  <DestTime>2020-07-07T19:28:07.3830893+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T16:35:54+00:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

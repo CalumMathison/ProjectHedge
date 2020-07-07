@@ -17,23 +17,25 @@ namespace Engine.Components.Graphics
         #endregion
 
         #region Constructor
-        public TileComponent(Entity e) : base(e)
+        public TileComponent(Entity e, Vector2 pos) : base(e)
         {
+            _position = pos;
 
+            SpriteComponent sc = new SpriteComponent(_parent);
+            sc.Loc = "Graphics/Testing/TestTile";
+            sc.Position = pos;
+            _parent.AddComponent(sc);
+
+            ColliderComponent cc = new ColliderComponent(_parent, 32, 32);
+            cc.Position = pos;
+            _parent.AddComponent(cc);
         }
         #endregion
 
         #region Methods
         public override void Initialise()
-        {
-            SpriteComponent sc = new SpriteComponent(_parent);
-            sc.Loc = "Graphics/Testing/TestTile";
-            _parent.AddComponent(sc);
-
-            ColliderComponent cc = new ColliderComponent(_parent, 32, 32);
-            _parent.AddComponent(cc);
-
-            base.Initialise();
+        {          
+            base.Initialise();          
         }
 
         public override void Load(ContentManager content)

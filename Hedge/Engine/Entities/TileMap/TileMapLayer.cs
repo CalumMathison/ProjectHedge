@@ -16,22 +16,31 @@ namespace Engine.Entities.TileMap
     public class TileMapLayer : Entity
     {
         #region Fields
-        
+        private int _size;
         #endregion
 
         #region Properties
         #endregion
 
         #region Constructor
-        public TileMapLayer() : base()
+        public TileMapLayer(int size) : base()
         {
-
+            _size = size;
         }
         #endregion
 
         #region Methods
         public override void Initialise()
         {
+            for (int x = 0; x < _size; x++)
+            {
+                for (int y = 0; y < _size; y++)
+                {
+                    TileComponent tc = new TileComponent(this, new Vector2(x * 32, y * 32));
+                    AddComponent(tc);
+                }
+            }
+
             base.Initialise();
         }
 

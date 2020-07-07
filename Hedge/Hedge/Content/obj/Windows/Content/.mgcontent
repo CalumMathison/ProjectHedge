@@ -4,9 +4,13 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>D:/Projects/Woad Stoat Studio/Project Hedge/Repo/ProjectHedge/Hedge/Hedge/Content/Graphics/Debug/DebugCollider.png</File>
     <File>D:/Projects/Woad Stoat Studio/Project Hedge/Repo/ProjectHedge/Hedge/Hedge/Content/Graphics/Testing/TestSquare.png</File>
+    <File>D:/Projects/Woad Stoat Studio/Project Hedge/Repo/ProjectHedge/Hedge/Hedge/Content/Graphics/Testing/TestTile.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

@@ -1,8 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/// Collider Component
+/// Dev: Calum Mathison
+/// Created on: 07/07/20
+/// Change Log:
+/// To Do:
+/// 1. Fix origin position
+/// 
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -32,7 +35,7 @@ namespace Engine.Components.Physics
         #region Methods
         public override void Initialise()
         {
-            _rect = new Rectangle((int)_position.X, (int)_position.Y, _width, _height);
+            _rect = new Rectangle((int)_position.X - (_width / 2), (int)_position.Y - (_height / 2), _width, _height);
             base.Initialise();
         }
 
@@ -45,10 +48,10 @@ namespace Engine.Components.Physics
         public override void Update(GameTime gt)
         {
             base.Update(gt);
-            if (_position.X != _rect.X || _position.Y != _rect.Y)
+            if (_position.X - (_width / 2) != _rect.X || _position.Y - (_height / 2) != _rect.Y)
             {
-                _rect.X = (int)_position.X;
-                _rect.Y = (int)_position.Y;
+                _rect.X = (int)_position.X - (_width / 2);
+                _rect.Y = (int)_position.Y - (_height / 2);
             }
         }
 

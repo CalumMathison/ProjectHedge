@@ -36,7 +36,7 @@ namespace Engine.ECM
         {
             // Set Parent
             _parent = p;
-            _position = _parent.Position;
+           // _position = _parent.Position;
         }
         #endregion
 
@@ -64,10 +64,10 @@ namespace Engine.ECM
         /// <param name="gt"></param>
         public virtual void Update(GameTime gt)
         {
-            if (_position != _parent.Position)
-            {
-                _position = _parent.Position;
-            }
+            //if (_position != _parent.Position)
+            //{
+            //    _position = _parent.Position;
+            //}
         }
 
         /// <summary>

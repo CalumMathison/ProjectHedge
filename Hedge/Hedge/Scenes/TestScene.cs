@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Engine.Components.Graphics;
 using Engine.Entities.Camera;
+using Engine.Entities.TileMap;
 using Engine.ECM;
 
 namespace Hedge.Scenes
@@ -40,6 +41,9 @@ namespace Hedge.Scenes
             e.AddComponent(sc);
             e.Position = new Vector2(0,0);
             EM.AddEntity(e);
+
+            TileMapLayer tl = new TileMapLayer(10);
+            EM.AddEntity(tl);
 
             base.Initialise();
         }

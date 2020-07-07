@@ -19,6 +19,7 @@ namespace Hedge
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            //graphics.IsFullScreen = true;
         }
 
         protected override void Initialize()
@@ -37,7 +38,7 @@ namespace Hedge
 
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+
         }
 
         protected override void Update(GameTime gameTime)

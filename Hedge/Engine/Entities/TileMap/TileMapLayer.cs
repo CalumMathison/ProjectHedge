@@ -10,6 +10,7 @@ using Engine.ECM;
 using Engine.Components.Graphics;
 using Engine.Components.Physics;
 using Engine.Input;
+using Engine.Entities.Camera;
 
 namespace Engine.Entities.TileMap
 {
@@ -17,9 +18,15 @@ namespace Engine.Entities.TileMap
     {
         #region Fields
         private int _size;
+        private FreeCamera _cam;
+        private TileComponent _selectedTile;
         #endregion
 
         #region Properties
+        public FreeCamera Cam
+        {
+            set { _cam = value; }
+        }
         #endregion
 
         #region Constructor
@@ -51,17 +58,31 @@ namespace Engine.Entities.TileMap
 
         public override void Update(GameTime gt)
         {
-            foreach (ColliderComponent c in FindComponents<ColliderComponent>())
+            foreach (TileComponent tile in FindComponents<TileComponent>())
             {
-                if (InputManager.Instance.IsMouseColliding(c.Rect) && 
-                    InputManager.Instance.IsMousePressed(InputManager.MouseButtons.Left))
+                if (InputManager.Instance.IsMouseColliding(tile.CC.Rect, MathFunctions.ScreenToWorldSpace(_cam, InputManager.Instance.GetMousePos())))
                 {
-                    Console.WriteLine("Clicked"); 
+                    if (InputManager.Instance.IsMousePressed(InputManager.MouseButtons.Left))
+                    {
+                        if (_selectedTile == null)
+                        {
+                            _selectedTile = tile;                           
+                        }
+                        else
+                        {
+                            _selectedTile.IsSelected = false;
+                            _selectedTile = tile;
+                        }
+                        _selectedTile.IsSelected = true;
+                    }
                 }
+                //else
+                //{
+                //    tile.IsSelected = false;
+                //}
             }
             base.Update(gt);
         }
-
         public override void Draw(SpriteBatch sb)
         {
             base.Draw(sb);

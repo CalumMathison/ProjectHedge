@@ -8,9 +8,12 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Engine.Components.Graphics;
+using Engine.Components.Physics;
 using Engine.Entities.Camera;
 using Engine.Entities.TileMap;
 using Engine.ECM;
+using Engine.Input;
+using Engine;
 
 namespace Hedge.Scenes
 {
@@ -42,7 +45,8 @@ namespace Hedge.Scenes
             e.Position = new Vector2(0,0);
             EM.AddEntity(e);
 
-            TileMapLayer tl = new TileMapLayer(10);
+            TileMapLayer tl = new TileMapLayer(100);
+            tl.Cam = c;
             EM.AddEntity(tl);
 
             base.Initialise();
@@ -55,6 +59,8 @@ namespace Hedge.Scenes
 
         public override void Update(GameTime gt)
         {
+
+
             base.Update(gt);
         }
 

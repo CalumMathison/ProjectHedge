@@ -12,24 +12,45 @@ namespace Engine.Components.Graphics
     public class TileComponent : Component
     {
         #region Fields
+        private bool _selected;
+        private SpriteComponent _sc;
+        private ColliderComponent _cc;
         #endregion
 
         #region Properties
+        public bool IsSelected
+        {
+            get { return _selected; }
+            set { _selected = value; }
+        }
+
+        public SpriteComponent SC
+        {
+            get { return _sc; }
+            set { _sc = value; }
+        }
+
+        public ColliderComponent CC
+        {
+            get { return _cc; }
+            set { _cc = value; }
+        }
         #endregion
 
         #region Constructor
         public TileComponent(Entity e, Vector2 pos) : base(e)
         {
+            _selected = false;
             _position = pos;
 
-            SpriteComponent sc = new SpriteComponent(_parent);
-            sc.Loc = "Graphics/Testing/TestTile";
-            sc.Position = pos;
-            _parent.AddComponent(sc);
+            _sc = new SpriteComponent(_parent);
+            _sc.Loc = "Graphics/Testing/TestTile";
+            _sc.Position = pos;
+            _parent.AddComponent(_sc);
 
-            ColliderComponent cc = new ColliderComponent(_parent, 32, 32);
-            cc.Position = pos;
-            _parent.AddComponent(cc);
+            _cc = new ColliderComponent(_parent, 32, 32);
+            _cc.Position = pos;
+            _parent.AddComponent(_cc);
         }
         #endregion
 
@@ -46,6 +67,14 @@ namespace Engine.Components.Graphics
 
         public override void Update(GameTime gt)
         {
+            if (_selected == true)
+            {
+                _sc.Col = Color.Blue;
+            }
+            else
+            {
+                _sc.Col = Color.White;
+            }
             base.Update(gt);
         }
 

@@ -87,9 +87,14 @@ namespace Engine.Input
             return false;
         }
 
-        public bool IsMouseColliding(Rectangle target)
+        public bool IsMouseColliding(Rectangle target, Vector2 point)
         {
-            return target.Contains(_currMs.Position);
+            return target.Contains(point);
+        }
+
+        public Vector2 GetMousePos()
+        {
+            return new Vector2(_currMs.X, _currMs.Y);
         }
 
         public bool GetMouseScrollUp()

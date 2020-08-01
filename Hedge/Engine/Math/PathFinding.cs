@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Engine.Entities.TileMap;
 
-namespace Engine.Components.Physics
+namespace Engine.Math
 {
-    public class NavAgent
+    public static class PathFinding
     {
         #region Fields
+        
         #endregion
 
         #region Properties
         #endregion
 
-        #region Constructor
-        #endregion
-
         #region Methods
+        
         #endregion
     }
 }

@@ -76,10 +76,6 @@ namespace Engine.Entities.TileMap
                         _selectedTile.IsSelected = true;
                     }
                 }
-                //else
-                //{
-                //    tile.IsSelected = false;
-                //}
             }
             base.Update(gt);
         }
